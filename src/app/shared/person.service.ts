@@ -9,11 +9,11 @@ export class PersonService {
   constructor (private http: HttpClient) { }
   
   createPerson(person: Person) {
-    return this.http.post<Person>('http://182.160.26.43/people', person)
+    return this.http.post<Person>('https://api.carlosrv999.com/people', person)
   }
 
   getLuckyPersons() {
-    return this.http.get<Person[]>('http://182.160.26.43/people?filter={%22where%22:{%22luck%22:1},%22limit%22:5}')
+    return this.http.get<Person[]>('https://api.carlosrv999.com/people?filter={%22where%22:{%22luck%22:1},%22limit%22:5}')
       .pipe(
         map(responseData => {
           const postsArray: Person[] = [];
